@@ -53,7 +53,7 @@ void test_find_single(const key_t key, const key_t wrong_key) {
   delete_rbtree(t);
 }
 
-// erase should delete root node
+// // erase should delete root node
 void test_erase_root(const key_t key) {
   rbtree *t = new_rbtree();
   node_t *p = rbtree_insert(t, key);
@@ -318,7 +318,7 @@ void test_find_erase(rbtree *t, const key_t *arr, const size_t n) {
 
   for (int i = 0; i < n; i++) {
     node_t *p = rbtree_find(t, arr[i]);
-    // printf("arr[%d] = %d\n", i, arr[i]);
+    // printf("arr[%d] = %d\n", i, arr[i]); // 원래 주석
     assert(p != NULL);
     assert(p->key == arr[i]);
     rbtree_erase(t, p);
